@@ -19,26 +19,7 @@
 **۳. قرار دادن کدهای پروکسی**
 - پس از ساخته شدن ورکر، روی دکمه **Edit Code** کلیک کنید تا وارد ویرایشگر کد کلودفلر شوید.
 - تمام کدهای پیش‌فرض داخل ویرایشگر را پاک کنید.
-- کد زیر را کپی کرده و در ویرایشگر کلودفلر پیست (Paste) کنید:
-
-```javascript
-export default {
-  async fetch(request, env) {
-    const url = new URL(request.url);
-    
-    // آدرس تلگرام را جایگزین آدرس ورکر می‌کنیم
-    const telegramUrl = "https://api.telegram.org" + url.pathname + url.search;
-    
-    const newRequest = new Request(telegramUrl, {
-      method: request.method,
-      headers: request.headers,
-      body: request.body,
-    });
-
-    return fetch(newRequest);
-  },
-};
-```
+- کد موجود در worker.js را کپی کرده و در ویرایشگر کلودفلر پیست (Paste) کنید.
 
 **۴. ذخیره و استقرار (Deploy)**
 - در گوشه سمت راست بالای ویرایشگر، روی دکمه آبی رنگ **Deploy** (یا Save and Deploy) کلیک کنید.
